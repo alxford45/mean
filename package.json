@@ -12,7 +12,10 @@
     "compile:server": "webpack --config webpack.server.config.js --progress --colors",
     "serve:ssr": "node dist/server",
     "build:ssr": "npm run build:client-and-server-bundles && npm run compile:server",
-    "build:client-and-server-bundles": "ng build --prod && ng run app:server:production"
+    "build:client-and-server-bundles": "ng build --prod && ng run app:server:production",
+    "types": "npm run types:get-schema && npm run types:codegen",
+    "types:get-schema": "graphql get-schema --project database",
+    "types:codegen": "graphql codegen --project database"
   },
   "private": true,
   "dependencies": {
