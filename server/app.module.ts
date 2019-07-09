@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { AngularUniversalModule } from '@nestjs/ng-universal';
 import { join } from 'path';
 import { GraphQLModule } from '@nestjs/graphql';
+import { PrismaModule } from '../prisma/prisma.module';
 
 @Module({
   imports: [
@@ -12,7 +13,8 @@ import { GraphQLModule } from '@nestjs/graphql';
     }),
     GraphQLModule.forRoot({
       autoSchemaFile: 'schema.gql'
-    })
+    }),
+    PrismaModule
   ]
 })
 export class ApplicationModule {}
